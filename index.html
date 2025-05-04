@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fishy Landing Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Border fish animations -->
+  <div class="fish-border top"></div>
+  <div class="fish-border bottom"></div>
+  <div class="fish-border left"></div>
+  <div class="fish-border right"></div>
+
+  <header>
+    <h1>Welcome to the Ocean Landing Page</h1>
+    <p>Explore your creativity in web design!</p>
+  </header>
+
+  <section class="content">
+    <h2>Features</h2>
+    <p>This page uses animated fish as borders using CSS.</p>
+  </section>
+
+</body>
+</html>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e0f7fa;
+  overflow: hidden;
+  position: relative;
+}
+
+header {
+  text-align: center;
+  padding: 100px 20px 50px;
+  background: #4dd0e1;
+  color: white;
+}
+
+.content {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.fish-border {
+  position: absolute;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Blue_fish_icon.svg/64px-Blue_fish_icon.svg.png');
+  background-size: contain;
+  background-repeat: repeat;
+  z-index: 10;
+}
+
+.top, .bottom {
+  height: 64px;
+  width: 100%;
+  animation: swim-horizontal 20s linear infinite;
+}
+
+.left, .right {
+  width: 64px;
+  height: 100%;
+  animation: swim-vertical 20s linear infinite;
+  background-repeat: repeat-y;
+}
+
+.top { top: 0; left: 0; }
+.bottom { bottom: 0; left: 0; transform: scaleY(-1); }
+.left { top: 0; left: 0; }
+.right { top: 0; right: 0; transform: scaleX(-1); }
+
+@keyframes swim-horizontal {
+  0% { background-position: 0 0; }
+  100% { background-position: -1000px 0; }
+}
+
+@keyframes swim-vertical {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 -1000px; }
+}
